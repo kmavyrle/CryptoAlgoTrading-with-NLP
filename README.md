@@ -32,7 +32,9 @@ With the Reddit submissions post titles stored in our csv documents, we processe
 5.	Lemmatization will reduce the stemmed words to their root form to produce meaningful words. For example, “lazi” to “lazy”. 
 6.	Convert the list of sentences to a string type.
 Our data processing function is as shown using various supporting functions from the Python NLTK library.
+
 ![image](https://user-images.githubusercontent.com/85161103/163224227-a172f541-c3c9-40d9-9da8-d7d5f09e5ff9.png)
+
 We import our scrapped Reddit titles from our csv files and run our data processing function iteratively to clean the data. The changes in the submission titles are as shown:
 ### Pre-processed and Cleaned Data
 ![image](https://user-images.githubusercontent.com/85161103/163224495-185d7362-d420-42e7-b023-301ca93517a8.png)
