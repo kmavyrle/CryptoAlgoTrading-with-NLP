@@ -149,8 +149,12 @@ def remove_stopwords(sentence_list:list):
 # data['reddit_title'] = list(map(remove_stopwords,data['reddit_title']))
 
 def stem_words(wordlist:list):
-    stemmed_w_list = [port.stem(word) for word in wordlist]
-    return stemmed_w_list
+    sent_list = []
+    for words in wordlist:
+        stemmed_w_list = [port.stem(word) for word in words]
+        sent_list.append(stemmed_w_list)        
+    return sent_list
+stemmed_data = stem_words(stopwords_cleaned)
 
 # data['reddit_title'] = list(map(stem_words,data['reddit_title']))
 
@@ -165,6 +169,11 @@ def to_string(wlist:list):
     return strng
 #for i in merged_data.index:
 #   data.loc[i,'reddit_title'] = to_string(data.loc[i,'reddit_title'])
+
+
+def word_tokenizer(sentence_list:list):
+    word_tokenized_data = list(map(word_tokenize,casefolded_data))
+    return word_tokenized_data
 
 def major_vote(input):
     if input >=2:
