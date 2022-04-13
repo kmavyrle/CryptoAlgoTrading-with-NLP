@@ -179,7 +179,7 @@ def major_vote(input):
     if input >=2:
         return 1
     elif input == 1:
-        return -1
+        return 0
     else:
         return 1
 
