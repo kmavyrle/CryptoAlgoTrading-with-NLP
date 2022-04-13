@@ -19,6 +19,17 @@ from nltk.stem.wordnet import WordNetLemmatizer
 nltk.download('wordnet')#Download wordnet
 wnet = WordNetLemmatizer()
 
+import datetime as dt
+from sklearn import svm
+svm_model = svm.SVC()
+
+from sklearn.linear_model import LogisticRegression
+logisticRegr = LogisticRegression(max_iter = 2000)
+
+from sklearn.naive_bayes import MultinomialNB
+clf = MultinomialNB()
+
+
 
 def convert_to_unix(date):
   '''
@@ -95,7 +106,7 @@ def prepare_data(data: pd.Series)-> list:
 
     #2 Tokenize data
     print('Tokenizing data......')
-    sent_tokenized_data = list(map(sent_tokenize,casefolded_data))
+    sent_tokenized_data = list(map(word_tokenize,casefolded_data))
 
     #3 Remove stopwords from data
     print('Removing stopwords......')
@@ -108,9 +119,12 @@ def prepare_data(data: pd.Series)-> list:
     print('Stemming words......')
     port = PorterStemmer()
     def stem_words(wordlist:list):
-        stemmed_w_list = [port.stem(word) for word in wordlist]
-        return stemmed_w_list
-    stemmed_data = list(map(stem_words,stopwords_cleaned))
+        sent_list = []
+        for words in wordlist:
+            stemmed_w_list = [port.stem(word) for word in words]
+            sent_list.append(stemmed_w_list)        
+        return sent_list
+    stemmed_data = stem_words(stopwords_cleaned)
 
     #5 wnet = WordNetLemmatizer()
     print('Lemmatizing words......')
@@ -118,7 +132,6 @@ def prepare_data(data: pd.Series)-> list:
         lemmed_w_list = [wnet.lemmatize(word) for word in wordlist]
         return lemmed_w_list
     processed_data = list(map(lem_words,stemmed_data))    
-
 
     return processed_data
     
@@ -152,6 +165,20 @@ def to_string(wlist:list):
     return strng
 #for i in merged_data.index:
 #   data.loc[i,'reddit_title'] = to_string(data.loc[i,'reddit_title'])
+
+def major_vote(input):
+    if input >=2:
+        return 1
+    elif input == 1:
+        return -1
+    else:
+        return 1
+
+def semi_active(input):
+    if input == 0:
+        return -1
+    else:
+        return 1
 
 
     
