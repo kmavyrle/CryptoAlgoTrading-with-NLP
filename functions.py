@@ -154,7 +154,7 @@ def stem_words(wordlist:list):
         stemmed_w_list = [port.stem(word) for word in words]
         sent_list.append(stemmed_w_list)        
     return sent_list
-stemmed_data = stem_words(stopwords_cleaned)
+    stemmed_data = stem_words(stopwords_cleaned)
 
 # data['reddit_title'] = list(map(stem_words,data['reddit_title']))
 
