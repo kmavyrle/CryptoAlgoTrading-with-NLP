@@ -1,4 +1,4 @@
-# CryptoAlgoTrading-with-ML-inprogress
+# CryptoAlgoTrading-with-ML
 Algorithmic crypto currency trading program using natural language processing
 
 ## Introduction
