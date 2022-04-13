@@ -34,10 +34,10 @@ With the Reddit submissions post titles stored in our csv documents, we processe
 Our data processing function is as shown using various supporting functions from the Python NLTK library.
 ![image](https://user-images.githubusercontent.com/85161103/163224227-a172f541-c3c9-40d9-9da8-d7d5f09e5ff9.png)
 We import our scrapped Reddit titles from our csv files and run our data processing function iteratively to clean the data. The changes in the submission titles are as shown:
-### Pre-processed and Cleaned Data!
-[Uploading image.png…]()
+### Pre-processed and Cleaned Data
 ![image](https://user-images.githubusercontent.com/85161103/163224495-185d7362-d420-42e7-b023-301ca93517a8.png)
-  
+
+
 ## Vectorization
 The next step would be to vectorize the data into an array of numbers for each feature. For natural language processing, a model called the Bag-of-words is used. The Bag-of-words model is a simplifying representation used to represent texts as the bag of its unique words. For this project, we scrapped over three years of data and every single unique word from each submission will be placed in this “bag-of-words".
 For example, we have a snippet of text as shown:
