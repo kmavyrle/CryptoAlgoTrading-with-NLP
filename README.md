@@ -65,7 +65,7 @@ Next, we will apply our model iteratively to our scrapped submissions using the 
 
 ## Trading Strategy Implementation
 The final product of the model’s predictions is an array of 1’s and 0’s for each date. The 1’s represent a prediction that the price of bitcoin will go up for the next day, while 0’s represent a prediction that the price of bitcoin will fall. For each prediction, we will be either be going long or short bitcoin with 100% of our portfolio depending on whether the prediction is a 1 or 0, with 1 being long and 0 being short. We then plotted out the compounded returns of the trading strategy. There were periods where the model outperformed a naïve buy-and-hold strategy and periods where a buy-and-hold strategy performed better. Overall, it performed fairly well.
-![image](https://user-images.githubusercontent.com/85161103/163239134-a8e2028f-b15b-457d-9062-30462d986e37.png)
+![image](https://user-images.githubusercontent.com/85161103/163239699-85ab22b1-1eee-4a5a-9507-8f8c0fb1addb.png)
 
 ## Monitoring
 For the monitoring step, we set an out-of-sample dataset to test the trained model for each iteration. If the accuracy of the model falls below 55%, we will not be using the prediction of the model. Instead, we will be classifying that particular day’s text as being equal to 1 which will be our default class. This is because when the class is equal to 1, our action to take in the markets would be to long $BTC/USD as we do not want to unnecessarily short the asset. This will ensure that if the model’s predictions become too inaccurate, we will not be relying on its predictions for our trading strategy.
