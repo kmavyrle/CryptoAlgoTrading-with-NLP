@@ -1,4 +1,4 @@
-# CryptoAlgoTrading-with-ML
+# CryptoAlgoTrading-with-NLP
 Algorithmic crypto currency trading program using natural language processing
 
 ## Introduction
