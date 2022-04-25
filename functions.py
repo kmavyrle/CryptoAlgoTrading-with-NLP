@@ -177,11 +177,10 @@ def word_tokenizer(sentence_list:list):
 
 def major_vote(input):
     if input >=2:
-        return 1
-    elif input == 1:
-        return 0
-    else:
-        return 1
+        return 1.5
+    elif input <= 1:
+        return -0.25
+
 
 def semi_active(input):
     if input == 0:
